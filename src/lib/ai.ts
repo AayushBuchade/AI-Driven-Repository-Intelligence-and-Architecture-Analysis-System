@@ -1,12 +1,12 @@
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { localEmbeddingModel } from "./local-embeddings";
 
-/** Claude Haiku 4.5 for chat, wiki, and analysis */
-export const chatModel = anthropic("claude-haiku-4-5");
+/** Gemini 2.5 Flash-Lite for chat, wiki, and analysis (free API tier) */
+export const chatModel = google("gemini-2.5-flash-lite");
 
 /**
- * Local embeddings via Vercel AI SDK (no OpenAI).
- * Anthropic does not provide an embeddings API — vectors are computed in-process.
+ * Local embeddings via Vercel AI SDK (no Google embeddings).
+ * Vectors are computed in-process so RAG stays provider-independent.
  */
 export const embeddingModel = localEmbeddingModel;
 

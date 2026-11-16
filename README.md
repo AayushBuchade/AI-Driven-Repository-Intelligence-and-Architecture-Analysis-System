@@ -49,7 +49,7 @@ See [demo screenshots](#demo-screenshots) above.
 | Layer      | Technology                                                                      |
 | ---------- | ------------------------------------------------------------------------------- |
 | Framework  | **Next.js 16** (App Router), **React 19**, **TypeScript 5**, **Tailwind CSS 4** |
-| LLM        | **Vercel AI SDK** + **Anthropic Claude Haiku 4.5** (`claude-haiku-4-5`)         |
+| LLM        | **Vercel AI SDK** + **Google Gemini 2.5 Flash-Lite** (`gemini-2.5-flash-lite`)  |
 | Embeddings | **Local feature hashing** (no OpenAI) — `EmbeddingModelV3` via AI SDK           |
 | Vectors    | **Pinecone** (optional) with **in-memory fallback**                             |
 | GitHub     | REST API (repo + tree) + `raw.githubusercontent.com` + Contents API fallback    |
@@ -101,7 +101,7 @@ GET /api/traces?sessionId=
 ### Prerequisites
 
 - Node.js 20+
-- [Anthropic API key](https://console.anthropic.com/)
+- [Google Gemini API key](https://aistudio.google.com/apikey) (`GOOGLE_GENERATIVE_AI_API_KEY`)
 - (Recommended) [GitHub personal access token](https://github.com/settings/tokens) for public repos — no scopes required
 - (Optional) [Pinecone](https://www.pinecone.io/) index matching `PINECONE_DIMENSION`
 
@@ -110,7 +110,7 @@ GET /api/traces?sessionId=
 ```bash
 npm install
 cp .env.example .env.local
-# Edit .env.local — at minimum set ANTHROPIC_API_KEY
+# Edit .env.local — at minimum set GOOGLE_GENERATIVE_AI_API_KEY
 npm run dev
 ```
 
@@ -121,7 +121,7 @@ Open [http://localhost:3000](http://localhost:3000), paste a **public** GitHub r
 
 | Variable             | Required      | Purpose                                       |
 | -------------------- | ------------- | --------------------------------------------- |
-| `ANTHROPIC_API_KEY`  | Yes           | Claude for chat and wiki                      |
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Yes      | Gemini for chat, wiki, and architecture analysis |
 | `GITHUB_TOKEN`       | Recommended   | Higher GitHub rate limits (~5k/hr vs ~60/hr)  |
 | `PINECONE_API_KEY`   | Optional      | Cloud vector storage                          |
 | `PINECONE_INDEX`     | With Pinecone | Index name (e.g. `codebase-intelligence`)     |
@@ -132,7 +132,7 @@ Open [http://localhost:3000](http://localhost:3000), paste a **public** GitHub r
 Example `.env.local`:
 
 ```env
-ANTHROPIC_API_KEY=sk-ant-...
+GOOGLE_GENERATIVE_AI_API_KEY=...
 GITHUB_TOKEN=ghp_...
 PINECONE_API_KEY=...
 PINECONE_INDEX=codebase-intelligence
