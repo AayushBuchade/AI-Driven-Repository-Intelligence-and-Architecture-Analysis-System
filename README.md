@@ -1,5 +1,7 @@
 # Codebase Intelligence Platform
 
+By **Aayush Buchade**.
+
 A Next.js app that indexes **public GitHub repositories** and helps you understand them with an auto-generated wiki, cited Q&A chat, hybrid retrieval traces, and lightweight dependency-impact analysis.
 
 Paste a repo URL → index → explore **Wiki**, **Chat**, and **Traces** side by side.
@@ -172,4 +174,4 @@ If Pinecone is missing or unreachable, the app falls back to in-memory vectors a
 
 ## License
 
-Private project — add a license if you open-source it.
+Copyright (c) 2026 Aayush Buchade. Private project — add a license if you open-source it.

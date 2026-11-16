@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Codebase Intelligence",
   description:
-    "Analyze GitHub repositories with AI — cited Q&A, auto wiki, dependency impact",
+    "Analyze GitHub repositories with AI — cited Q&A, auto wiki, dependency impact. By Aayush Buchade.",
+  authors: [{ name: "Aayush Buchade" }],
 };
 
 export default function RootLayout({

@@ -14,7 +14,7 @@ try {
 
 const url =
   process.argv[2] ??
-  "https://github.com/SahilMalgundkar24/Ai-PoweredChatbot";
+  "https://github.com/AayushBuchade/demo";
 
 const res = await fetch("http://localhost:3000/api/ingest", {
   method: "POST",
