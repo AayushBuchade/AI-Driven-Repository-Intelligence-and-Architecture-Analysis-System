@@ -2,7 +2,7 @@ import { google } from "@ai-sdk/google";
 import { localEmbeddingModel } from "./local-embeddings";
 
 /** Gemini 2.5 Flash-Lite for chat, wiki, and analysis (free API tier) */
-export const chatModel = google("gemini-2.5-flash-lite");
+export const chatModel = google("gemini-3.5-flash-lite");
 
 /**
  * Local embeddings via Vercel AI SDK (no Google embeddings).
